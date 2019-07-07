@@ -1,0 +1,203 @@
+
+        tag_scorehenriquan@club02:/data3/chenriquan/group2/TRN/TRN-pytorch$ CUDA_VISIBLE_DEVICES=4,5,6,7 python3 main.py something RGB                      --arch BNInception --num_segments 8                      --consensus_type TRNmultiscale --batch-size 32                      --workers 1 --gpus 0 1 2 3
+args args args
+Namespace(arch='BNInception', batch_size=32, clip_gradient=20, consensus_type='TRNmultiscale', dataset='something', dropout=0.8, epochs=120, eval_freq=5, evaluate=False, flow_prefix='', gpus=[0, 1, 2, 3], img_feature_dim=256, k=3, loss_type='nll', lr=0.001, lr_steps=[50, 100], modality='RGB', momentum=0.9, no_partialbn=False, num_segments=8, print_freq=20, resume='', root_log='log', root_model='model', root_output='output', root_path='', snapshot_pref='', start_epoch=0, store_name='', train_list='', val_list='', weight_decay=0.0005, workers=1)
+storing name: TRN_something_RGB_BNInception_TRNmultiscale_segment8
+
+    Initializing TSN with base model: BNInception.
+    TSN Configurations:
+        input_modality:     RGB
+        num_segments:       8
+        new_length:         1
+        consensus_module:   TRNmultiscale
+        dropout_ratio:      0.8
+        img_feature_dim:    256
+
+/data3/chenriquan/group2/TRN/TRN-pytorch/model_zoo/bninception/pytorch_load.py:13: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  manifest = yaml.load(open(model_path))
+/data3/chenriquan/group2/TRN/TRN-pytorch/models.py:87: UserWarning: nn.init.normal is now deprecated in favor of nn.init.normal_.
+  normal(self.new_fc.weight, 0, std)
+/data3/chenriquan/group2/TRN/TRN-pytorch/models.py:88: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  constant(self.new_fc.bias, 0)
+Multi-Scale Temporal Relation Network Module in use ['8-frame relation', '7-frame relation', '6-frame relation', '5-frame relation', '4-frame relation', '3-frame relation', '2-frame relation']
+video number:86017
+/home/chenriquan/anaconda3/envs/group2_env/lib/python3.6/site-packages/torchvision/transforms/transforms.py:188: UserWarning: The use of the transforms.Scale transform is deprecated, please use transforms.Resize instead.
+  "please use transforms.Resize instead.")
+video number:11522
+group: first_conv_weight has 1 params, lr_mult: 1, decay_mult: 1
+group: first_conv_bias has 1 params, lr_mult: 2, decay_mult: 0
+group: normal_weight has 83 params, lr_mult: 1, decay_mult: 1
+group: normal_bias has 83 params, lr_mult: 2, decay_mult: 0
+group: BN scale/shift has 2 params, lr_mult: 1, decay_mult: 0
+Freezing BatchNorm2D except the first one.
+main.py:187: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  total_norm = clip_grad_norm(model.parameters(), args.clip_gradient)
+Epoch: [0][0/2689], lr: 0.00100 Time 65.106 (65.106)    Data 7.351 (7.351)      Loss 5.2044 (5.2044)    Prec@1 0.000 (0.000)    Prec@5 0.000 (0.000)
+Epoch: [0][20/2689], lr: 0.00100        Time 4.861 (6.927)      Data 4.284 (3.620)      Loss 5.1528 (5.1886)    Prec@1 0.000 (0.446)    Prec@5 3.125 (2.530)
+Epoch: [0][40/2689], lr: 0.00100        Time 4.659 (5.626)      Data 4.209 (3.671)      Loss 5.1364 (5.1653)    Prec@1 0.000 (0.534)    Prec@5 6.250 (3.506)
+Epoch: [0][60/2689], lr: 0.00100        Time 4.039 (5.191)      Data 3.516 (3.705)      Loss 5.0897 (5.1603)    Prec@1 0.000 (0.666)    Prec@5 3.125 (3.740)
+Epoch: [0][80/2689], lr: 0.00100        Time 4.152 (4.995)      Data 3.596 (3.747)      Loss 5.1221 (5.1503)    Prec@1 0.000 (0.694)    Prec@5 0.000 (3.704)
+Epoch: [0][100/2689], lr: 0.00100       Time 3.964 (4.872)      Data 3.425 (3.766)      Loss 5.1073 (5.1440)    Prec@1 6.250 (0.835)    Prec@5 6.250 (4.022)
+Epoch: [0][120/2689], lr: 0.00100       Time 3.025 (4.656)      Data 2.553 (3.657)      Loss 4.9892 (5.1392)    Prec@1 3.125 (1.085)    Prec@5 15.625 (4.468)
+Epoch: [0][140/2689], lr: 0.00100       Time 3.240 (4.494)      Data 2.835 (3.573)      Loss 5.1286 (5.1339)    Prec@1 0.000 (1.020)    Prec@5 0.000 (4.433)
+Epoch: [0][160/2689], lr: 0.00100       Time 4.175 (4.425)      Data 3.698 (3.559)      Loss 5.1104 (5.1281)    Prec@1 0.000 (1.068)    Prec@5 0.000 (4.581)
+Epoch: [0][180/2689], lr: 0.00100       Time 3.283 (4.359)      Data 2.849 (3.537)      Loss 5.0876 (5.1237)    Prec@1 0.000 (1.001)    Prec@5 3.125 (4.489)
+Epoch: [0][200/2689], lr: 0.00100       Time 3.323 (4.243)      Data 2.800 (3.458)      Loss 5.0164 (5.1205)    Prec@1 0.000 (1.088)    Prec@5 9.375 (4.571)
+Epoch: [0][220/2689], lr: 0.00100       Time 2.999 (4.142)      Data 2.614 (3.389)      Loss 5.0724 (5.1157)    Prec@1 0.000 (1.160)    Prec@5 3.125 (4.610)
+Epoch: [0][240/2689], lr: 0.00100       Time 3.844 (4.052)      Data 3.362 (3.326)      Loss 5.0968 (5.1096)    Prec@1 0.000 (1.193)    Prec@5 6.250 (4.759)
+Epoch: [0][260/2689], lr: 0.00100       Time 2.868 (3.972)      Data 2.466 (3.269)      Loss 5.0762 (5.1025)    Prec@1 3.125 (1.281)    Prec@5 6.250 (4.993)
+Epoch: [0][280/2689], lr: 0.00100       Time 3.180 (3.906)      Data 2.657 (3.222)      Loss 5.2086 (5.0965)    Prec@1 3.125 (1.335)    Prec@5 6.250 (5.138)
+Epoch: [0][300/2689], lr: 0.00100       Time 3.088 (3.846)      Data 2.583 (3.179)      Loss 5.0237 (5.0925)    Prec@1 3.125 (1.360)    Prec@5 6.250 (5.274)
+Epoch: [0][320/2689], lr: 0.00100       Time 3.183 (3.797)      Data 2.812 (3.145)      Loss 4.9688 (5.0861)    Prec@1 6.250 (1.460)    Prec@5 18.750 (5.432)
+Epoch: [0][340/2689], lr: 0.00100       Time 4.701 (3.790)      Data 4.309 (3.150)      Loss 5.1030 (5.0797)    Prec@1 0.000 (1.430)    Prec@5 15.625 (5.663)
+Epoch: [0][360/2689], lr: 0.00100       Time 6.642 (3.862)      Data 6.192 (3.232)      Loss 4.9278 (5.0735)    Prec@1 3.125 (1.480)    Prec@5 12.500 (5.886)
+Epoch: [0][380/2689], lr: 0.00100       Time 4.168 (3.944)      Data 3.608 (3.320)      Loss 4.8446 (5.0691)    Prec@1 0.000 (1.493)    Prec@5 9.375 (6.012)
+Epoch: [0][400/2689], lr: 0.00100       Time 3.899 (3.982)      Data 3.436 (3.366)      Loss 5.0143 (5.0640)    Prec@1 0.000 (1.559)    Prec@5 6.250 (6.164)
+Epoch: [0][420/2689], lr: 0.00100       Time 4.755 (4.018)      Data 4.275 (3.407)      Loss 4.8375 (5.0559)    Prec@1 6.250 (1.700)    Prec@5 12.500 (6.413)
+Epoch: [0][440/2689], lr: 0.00100       Time 3.418 (4.026)      Data 2.934 (3.421)      Loss 4.5919 (5.0493)    Prec@1 15.625 (1.807)   Prec@5 28.125 (6.718)
+Epoch: [0][460/2689], lr: 0.00100       Time 3.232 (4.005)      Data 2.737 (3.406)      Loss 4.5915 (5.0415)    Prec@1 9.375 (1.939)    Prec@5 21.875 (6.928)
+Epoch: [0][480/2689], lr: 0.00100       Time 6.248 (4.011)      Data 5.720 (3.415)      Loss 4.7536 (5.0330)    Prec@1 9.375 (2.073)    Prec@5 21.875 (7.251)
+Epoch: [0][500/2689], lr: 0.00100       Time 5.204 (4.056)      Data 4.628 (3.464)      Loss 4.8596 (5.0282)    Prec@1 0.000 (2.090)    Prec@5 15.625 (7.410)
+Epoch: [0][520/2689], lr: 0.00100       Time 3.054 (4.049)      Data 2.679 (3.463)      Loss 4.8910 (5.0211)    Prec@1 0.000 (2.147)    Prec@5 6.250 (7.594)
+Epoch: [0][540/2689], lr: 0.00100       Time 4.619 (4.061)      Data 4.102 (3.480)      Loss 4.9643 (5.0158)    Prec@1 3.125 (2.149)    Prec@5 6.250 (7.729)
+Epoch: [0][560/2689], lr: 0.00100       Time 4.025 (4.069)      Data 3.476 (3.491)      Loss 4.8512 (5.0126)    Prec@1 0.000 (2.161)    Prec@5 12.500 (7.826)
+Epoch: [0][580/2689], lr: 0.00100       Time 4.373 (4.080)      Data 3.954 (3.506)      Loss 4.9338 (5.0057)    Prec@1 3.125 (2.211)    Prec@5 18.750 (8.057)
+Epoch: [0][600/2689], lr: 0.00100       Time 4.339 (4.085)      Data 3.831 (3.513)      Loss 4.9479 (4.9999)    Prec@1 9.375 (2.272)    Prec@5 9.375 (8.236)
+Epoch: [0][620/2689], lr: 0.00100       Time 3.716 (4.083)      Data 3.221 (3.513)      Loss 5.0132 (4.9952)    Prec@1 6.250 (2.330)    Prec@5 9.375 (8.379)
+Epoch: [0][640/2689], lr: 0.00100       Time 4.524 (4.087)      Data 4.055 (3.521)      Loss 4.8098 (4.9907)    Prec@1 3.125 (2.369)    Prec@5 9.375 (8.507)
+Epoch: [0][660/2689], lr: 0.00100       Time 4.272 (4.090)      Data 3.828 (3.528)      Loss 4.3175 (4.9844)    Prec@1 15.625 (2.454)   Prec@5 18.750 (8.699)
+Epoch: [0][680/2689], lr: 0.00100       Time 3.823 (4.095)      Data 3.320 (3.535)      Loss 4.4879 (4.9772)    Prec@1 6.250 (2.506)    Prec@5 28.125 (8.884)
+Epoch: [0][700/2689], lr: 0.00100       Time 4.499 (4.109)      Data 3.949 (3.551)      Loss 4.6541 (4.9721)    Prec@1 3.125 (2.550)    Prec@5 12.500 (9.041)
+Epoch: [0][720/2689], lr: 0.00100       Time 4.600 (4.126)      Data 4.135 (3.570)      Loss 5.0417 (4.9670)    Prec@1 0.000 (2.605)    Prec@5 6.250 (9.202)
+Epoch: [0][740/2689], lr: 0.00100       Time 4.394 (4.137)      Data 3.935 (3.584)      Loss 4.8696 (4.9621)    Prec@1 6.250 (2.640)    Prec@5 18.750 (9.316)
+Epoch: [0][760/2689], lr: 0.00100       Time 4.989 (4.151)      Data 4.464 (3.600)      Loss 4.4178 (4.9561)    Prec@1 9.375 (2.714)    Prec@5 18.750 (9.552)
+Epoch: [0][780/2689], lr: 0.00100       Time 4.822 (4.164)      Data 4.335 (3.614)      Loss 4.6239 (4.9508)    Prec@1 6.250 (2.777)    Prec@5 12.500 (9.691)
+Epoch: [0][800/2689], lr: 0.00100       Time 5.080 (4.175)      Data 4.490 (3.627)      Loss 4.8739 (4.9466)    Prec@1 3.125 (2.825)    Prec@5 12.500 (9.781)
+Epoch: [0][820/2689], lr: 0.00100       Time 4.607 (4.183)      Data 4.188 (3.637)      Loss 4.6897 (4.9408)    Prec@1 9.375 (2.855)    Prec@5 18.750 (9.908)
+clipping gradient: 20.71000432126122 with coef 0.9657168434034407
+Epoch: [0][840/2689], lr: 0.00100       Time 4.879 (4.192)      Data 4.434 (3.648)      Loss 4.8368 (4.9351)    Prec@1 3.125 (2.924)    Prec@5 15.625 (10.111)
+Epoch: [0][860/2689], lr: 0.00100       Time 4.619 (4.203)      Data 4.158 (3.661)      Loss 4.9291 (4.9307)    Prec@1 3.125 (2.980)    Prec@5 15.625 (10.239)
+Epoch: [0][880/2689], lr: 0.00100       Time 5.093 (4.213)      Data 4.636 (3.672)      Loss 4.4518 (4.9262)    Prec@1 12.500 (3.011)   Prec@5 37.500 (10.379)
+Epoch: [0][900/2689], lr: 0.00100       Time 4.153 (4.224)      Data 3.643 (3.685)      Loss 4.5177 (4.9220)    Prec@1 6.250 (3.042)    Prec@5 21.875 (10.468)
+Epoch: [0][920/2689], lr: 0.00100       Time 4.558 (4.234)      Data 4.098 (3.696)      Loss 4.7696 (4.9188)    Prec@1 6.250 (3.081)    Prec@5 15.625 (10.593)
+Epoch: [0][940/2689], lr: 0.00100       Time 5.015 (4.242)      Data 4.558 (3.706)      Loss 4.9254 (4.9128)    Prec@1 0.000 (3.128)    Prec@5 9.375 (10.757)
+Epoch: [0][960/2689], lr: 0.00100       Time 4.626 (4.265)      Data 4.085 (3.728)      Loss 4.8036 (4.9075)    Prec@1 6.250 (3.167)    Prec@5 6.250 (10.923)
+Epoch: [0][980/2689], lr: 0.00100       Time 5.505 (4.284)      Data 4.772 (3.746)      Loss 4.7099 (4.9022)    Prec@1 3.125 (3.252)    Prec@5 15.625 (11.063)
+Epoch: [0][1000/2689], lr: 0.00100      Time 4.950 (4.302)      Data 4.293 (3.762)      Loss 4.7152 (4.8973)    Prec@1 3.125 (3.290)    Prec@5 15.625 (11.192)
+Epoch: [0][1020/2689], lr: 0.00100      Time 5.171 (4.321)      Data 4.194 (3.780)      Loss 4.7140 (4.8923)    Prec@1 6.250 (3.336)    Prec@5 9.375 (11.319)
+Epoch: [0][1040/2689], lr: 0.00100      Time 5.087 (4.333)      Data 4.547 (3.791)      Loss 4.7457 (4.8869)    Prec@1 3.125 (3.389)    Prec@5 15.625 (11.485)
+clipping gradient: 25.16165074255896 with coef 0.794860408986266
+Epoch: [0][1060/2689], lr: 0.00100      Time 5.003 (4.346)      Data 4.458 (3.804)      Loss 5.1143 (4.8818)    Prec@1 6.250 (3.443)    Prec@5 21.875 (11.655)
+Epoch: [0][1080/2689], lr: 0.00100      Time 4.883 (4.359)      Data 4.285 (3.817)      Loss 4.5725 (4.8777)    Prec@1 0.000 (3.452)    Prec@5 18.750 (11.725)
+clipping gradient: 21.017600806733245 with coef 0.951583398310275
+Epoch: [0][1100/2689], lr: 0.00100      Time 4.538 (4.371)      Data 4.124 (3.829)      Loss 4.6399 (4.8719)    Prec@1 6.250 (3.491)    Prec@5 18.750 (11.836)
+Epoch: [0][1120/2689], lr: 0.00100      Time 5.763 (4.383)      Data 5.101 (3.841)      Loss 4.6599 (4.8680)    Prec@1 6.250 (3.524)    Prec@5 25.000 (11.942)
+Epoch: [0][1140/2689], lr: 0.00100      Time 4.760 (4.392)      Data 4.258 (3.850)      Loss 4.6326 (4.8646)    Prec@1 12.500 (3.596)   Prec@5 21.875 (12.081)
+Epoch: [0][1160/2689], lr: 0.00100      Time 5.120 (4.402)      Data 4.632 (3.860)      Loss 4.8398 (4.8609)    Prec@1 0.000 (3.639)    Prec@5 15.625 (12.215)
+Epoch: [0][1180/2689], lr: 0.00100      Time 5.993 (4.418)      Data 5.501 (3.875)      Loss 4.4229 (4.8575)    Prec@1 0.000 (3.665)    Prec@5 31.250 (12.331)
+Epoch: [0][1200/2689], lr: 0.00100      Time 5.247 (4.429)      Data 4.624 (3.885)      Loss 4.4411 (4.8527)    Prec@1 6.250 (3.747)    Prec@5 21.875 (12.440)
+clipping gradient: 20.028680431155607 with coef 0.9985680319153232
+Epoch: [0][1220/2689], lr: 0.00100      Time 4.797 (4.436)      Data 4.205 (3.893)      Loss 4.6933 (4.8479)    Prec@1 3.125 (3.813)    Prec@5 18.750 (12.582)
+Epoch: [0][1240/2689], lr: 0.00100      Time 5.144 (4.445)      Data 4.658 (3.901)      Loss 4.5769 (4.8423)    Prec@1 3.125 (3.868)    Prec@5 12.500 (12.737)
+Epoch: [0][1260/2689], lr: 0.00100      Time 4.929 (4.453)      Data 4.319 (3.908)      Loss 4.4539 (4.8384)    Prec@1 12.500 (3.918)   Prec@5 18.750 (12.872)
+Epoch: [0][1280/2689], lr: 0.00100      Time 4.797 (4.459)      Data 4.311 (3.914)      Loss 4.4514 (4.8338)    Prec@1 9.375 (3.974)    Prec@5 15.625 (12.971)
+Epoch: [0][1300/2689], lr: 0.00100      Time 5.157 (4.467)      Data 4.293 (3.921)      Loss 4.6996 (4.8288)    Prec@1 6.250 (4.047)    Prec@5 18.750 (13.108)
+clipping gradient: 21.616287185391528 with coef 0.925228270168254
+Epoch: [0][1320/2689], lr: 0.00100      Time 5.079 (4.476)      Data 4.612 (3.930)      Loss 4.4040 (4.8242)    Prec@1 9.375 (4.095)    Prec@5 18.750 (13.231)
+Epoch: [0][1340/2689], lr: 0.00100      Time 4.913 (4.485)      Data 4.498 (3.938)      Loss 4.9966 (4.8209)    Prec@1 3.125 (4.125)    Prec@5 12.500 (13.320)
+Epoch: [0][1360/2689], lr: 0.00100      Time 5.215 (4.494)      Data 4.736 (3.947)      Loss 4.2182 (4.8166)    Prec@1 18.750 (4.163)   Prec@5 40.625 (13.464)
+Epoch: [0][1380/2689], lr: 0.00100      Time 5.315 (4.503)      Data 4.695 (3.955)      Loss 3.9416 (4.8113)    Prec@1 18.750 (4.236)   Prec@5 43.750 (13.609)
+Epoch: [0][1400/2689], lr: 0.00100      Time 5.179 (4.510)      Data 4.705 (3.962)      Loss 4.6840 (4.8069)    Prec@1 9.375 (4.287)    Prec@5 15.625 (13.733)
+Epoch: [0][1420/2689], lr: 0.00100      Time 4.505 (4.517)      Data 3.839 (3.968)      Loss 4.3645 (4.8047)    Prec@1 18.750 (4.310)   Prec@5 25.000 (13.793)
+Epoch: [0][1440/2689], lr: 0.00100      Time 5.392 (4.522)      Data 4.893 (3.972)      Loss 4.3973 (4.7999)    Prec@1 3.125 (4.376)    Prec@5 21.875 (13.907)
+Epoch: [0][1460/2689], lr: 0.00100      Time 4.768 (4.528)      Data 4.295 (3.979)      Loss 4.4028 (4.7963)    Prec@1 12.500 (4.406)   Prec@5 28.125 (14.004)
+Epoch: [0][1480/2689], lr: 0.00100      Time 4.861 (4.536)      Data 4.132 (3.986)      Loss 4.3419 (4.7930)    Prec@1 12.500 (4.450)   Prec@5 31.250 (14.112)
+Epoch: [0][1500/2689], lr: 0.00100      Time 4.999 (4.543)      Data 4.565 (3.993)      Loss 4.2144 (4.7896)    Prec@1 6.250 (4.476)    Prec@5 25.000 (14.201)
+clipping gradient: 20.51550974584129 with coef 0.9748721941483424
+Epoch: [0][1520/2689], lr: 0.00100      Time 5.216 (4.550)      Data 4.754 (4.000)      Loss 4.3925 (4.7849)    Prec@1 9.375 (4.514)    Prec@5 25.000 (14.316)
+clipping gradient: 23.425810627088016 with coef 0.8537591427838728
+Epoch: [0][1540/2689], lr: 0.00100      Time 4.918 (4.555)      Data 4.325 (4.004)      Loss 4.6239 (4.7810)    Prec@1 9.375 (4.557)    Prec@5 21.875 (14.414)
+Epoch: [0][1560/2689], lr: 0.00100      Time 5.240 (4.560)      Data 4.567 (4.009)      Loss 4.5920 (4.7779)    Prec@1 6.250 (4.612)    Prec@5 15.625 (14.484)
+Epoch: [0][1580/2689], lr: 0.00100      Time 4.993 (4.566)      Data 4.439 (4.014)      Loss 4.5408 (4.7753)    Prec@1 6.250 (4.657)    Prec@5 15.625 (14.558)
+Epoch: [0][1600/2689], lr: 0.00100      Time 4.612 (4.572)      Data 4.013 (4.020)      Loss 4.5958 (4.7708)    Prec@1 6.250 (4.696)    Prec@5 28.125 (14.676)
+clipping gradient: 23.590557332657976 with coef 0.8477968416758289
+Epoch: [0][1620/2689], lr: 0.00100      Time 5.062 (4.578)      Data 4.478 (4.026)      Loss 4.7845 (4.7669)    Prec@1 3.125 (4.725)    Prec@5 15.625 (14.783)
+Epoch: [0][1640/2689], lr: 0.00100      Time 4.659 (4.582)      Data 4.181 (4.030)      Loss 4.3316 (4.7633)    Prec@1 12.500 (4.759)   Prec@5 15.625 (14.863)
+Epoch: [0][1660/2689], lr: 0.00100      Time 4.869 (4.588)      Data 4.171 (4.034)      Loss 4.3310 (4.7602)    Prec@1 9.375 (4.786)    Prec@5 25.000 (14.942)
+Epoch: [0][1680/2689], lr: 0.00100      Time 4.770 (4.592)      Data 4.270 (4.038)      Loss 4.5941 (4.7567)    Prec@1 6.250 (4.841)    Prec@5 21.875 (15.049)
+Epoch: [0][1700/2689], lr: 0.00100      Time 5.365 (4.597)      Data 4.881 (4.043)      Loss 4.4857 (4.7520)    Prec@1 9.375 (4.887)    Prec@5 21.875 (15.160)
+Epoch: [0][1720/2689], lr: 0.00100      Time 5.061 (4.602)      Data 4.641 (4.049)      Loss 4.4786 (4.7487)    Prec@1 9.375 (4.921)    Prec@5 28.125 (15.278)
+clipping gradient: 21.801904922036847 with coef 0.9173510329266905
+Epoch: [0][1740/2689], lr: 0.00100      Time 5.196 (4.606)      Data 4.613 (4.052)      Loss 4.4301 (4.7451)    Prec@1 9.375 (4.965)    Prec@5 28.125 (15.395)
+Epoch: [0][1760/2689], lr: 0.00100      Time 5.944 (4.612)      Data 5.271 (4.057)      Loss 4.4754 (4.7416)    Prec@1 0.000 (4.983)    Prec@5 18.750 (15.492)
+Epoch: [0][1780/2689], lr: 0.00100      Time 5.590 (4.616)      Data 4.864 (4.061)      Loss 4.5982 (4.7390)    Prec@1 3.125 (5.009)    Prec@5 9.375 (15.569)
+clipping gradient: 21.25692446875833 with coef 0.9408698812189104
+Epoch: [0][1800/2689], lr: 0.00100      Time 4.439 (4.621)      Data 3.945 (4.065)      Loss 4.1639 (4.7346)    Prec@1 15.625 (5.070)   Prec@5 34.375 (15.696)
+Epoch: [0][1820/2689], lr: 0.00100      Time 5.063 (4.626)      Data 4.550 (4.071)      Loss 4.4864 (4.7315)    Prec@1 3.125 (5.099)    Prec@5 18.750 (15.757)
+clipping gradient: 22.9722879506676 with coef 0.8706141958062465
+Epoch: [0][1840/2689], lr: 0.00100      Time 4.714 (4.630)      Data 4.277 (4.075)      Loss 4.5413 (4.7282)    Prec@1 3.125 (5.120)    Prec@5 12.500 (15.851)
+clipping gradient: 20.129615500968576 with coef 0.9935609549540407
+Epoch: [0][1860/2689], lr: 0.00100      Time 5.032 (4.635)      Data 4.398 (4.079)      Loss 4.3417 (4.7243)    Prec@1 12.500 (5.157)   Prec@5 25.000 (15.947)
+Epoch: [0][1880/2689], lr: 0.00100      Time 4.807 (4.640)      Data 4.208 (4.084)      Loss 4.5631 (4.7213)    Prec@1 3.125 (5.167)    Prec@5 21.875 (16.034)
+clipping gradient: 21.216611634713914 with coef 0.9426575903984906
+Epoch: [0][1900/2689], lr: 0.00100      Time 4.688 (4.645)      Data 4.184 (4.089)      Loss 4.9902 (4.7164)    Prec@1 6.250 (5.214)    Prec@5 18.750 (16.169)
+Epoch: [0][1920/2689], lr: 0.00100      Time 5.332 (4.650)      Data 4.741 (4.093)      Loss 4.3313 (4.7136)    Prec@1 6.250 (5.253)    Prec@5 18.750 (16.246)
+clipping gradient: 23.059263723915898 with coef 0.867330381379741
+Epoch: [0][1940/2689], lr: 0.00100      Time 4.956 (4.655)      Data 4.481 (4.098)      Loss 4.6761 (4.7106)    Prec@1 9.375 (5.278)    Prec@5 18.750 (16.327)
+Epoch: [0][1960/2689], lr: 0.00100      Time 4.436 (4.658)      Data 3.914 (4.102)      Loss 4.5345 (4.7080)    Prec@1 9.375 (5.305)    Prec@5 18.750 (16.412)
+Epoch: [0][1980/2689], lr: 0.00100      Time 5.243 (4.661)      Data 4.636 (4.105)      Loss 3.8191 (4.7057)    Prec@1 18.750 (5.332)   Prec@5 37.500 (16.482)
+Epoch: [0][2000/2689], lr: 0.00100      Time 5.782 (4.665)      Data 5.251 (4.108)      Loss 4.5339 (4.7022)    Prec@1 6.250 (5.389)    Prec@5 21.875 (16.567)
+clipping gradient: 20.068967744173108 with coef 0.9965634633005411
+clipping gradient: 20.772621428473403 with coef 0.9628057811030842
+Epoch: [0][2020/2689], lr: 0.00100      Time 5.452 (4.670)      Data 4.827 (4.113)      Loss 4.7400 (4.6983)    Prec@1 3.125 (5.449)    Prec@5 28.125 (16.678)
+clipping gradient: 21.047424248279402 with coef 0.9502350389328506
+clipping gradient: 20.78183838188135 with coef 0.962378767098728
+Epoch: [0][2040/2689], lr: 0.00100      Time 5.752 (4.672)      Data 5.189 (4.115)      Loss 4.3318 (4.6952)    Prec@1 9.375 (5.488)    Prec@5 25.000 (16.764)
+clipping gradient: 20.220765813257135 with coef 0.9890822229337923
+Epoch: [0][2060/2689], lr: 0.00100      Time 5.716 (4.676)      Data 4.931 (4.119)      Loss 4.6049 (4.6919)    Prec@1 9.375 (5.533)    Prec@5 21.875 (16.871)
+Epoch: [0][2080/2689], lr: 0.00100      Time 4.766 (4.679)      Data 4.156 (4.122)      Loss 4.3054 (4.6890)    Prec@1 6.250 (5.565)    Prec@5 28.125 (16.955)
+Epoch: [0][2100/2689], lr: 0.00100      Time 5.337 (4.681)      Data 4.847 (4.124)      Loss 4.0887 (4.6857)    Prec@1 15.625 (5.604)   Prec@5 34.375 (17.037)
+Epoch: [0][2120/2689], lr: 0.00100      Time 4.474 (4.684)      Data 3.914 (4.127)      Loss 3.7975 (4.6827)    Prec@1 21.875 (5.646)   Prec@5 34.375 (17.106)
+Epoch: [0][2140/2689], lr: 0.00100      Time 5.041 (4.687)      Data 4.523 (4.130)      Loss 4.4234 (4.6798)    Prec@1 3.125 (5.669)    Prec@5 28.125 (17.200)
+clipping gradient: 21.42643347090809 with coef 0.9334264625587435
+Epoch: [0][2160/2689], lr: 0.00100      Time 5.473 (4.689)      Data 4.950 (4.131)      Loss 4.3946 (4.6769)    Prec@1 6.250 (5.712)    Prec@5 21.875 (17.292)
+Epoch: [0][2180/2689], lr: 0.00100      Time 5.121 (4.692)      Data 4.417 (4.135)      Loss 4.2914 (4.6740)    Prec@1 6.250 (5.730)    Prec@5 25.000 (17.373)
+Epoch: [0][2200/2689], lr: 0.00100      Time 5.159 (4.695)      Data 4.658 (4.136)      Loss 4.4395 (4.6704)    Prec@1 3.125 (5.777)    Prec@5 21.875 (17.475)
+Epoch: [0][2220/2689], lr: 0.00100      Time 5.035 (4.697)      Data 4.485 (4.138)      Loss 4.4285 (4.6678)    Prec@1 9.375 (5.805)    Prec@5 25.000 (17.561)
+Epoch: [0][2240/2689], lr: 0.00100      Time 4.463 (4.700)      Data 3.895 (4.141)      Loss 3.9702 (4.6646)    Prec@1 18.750 (5.844)   Prec@5 28.125 (17.640)
+clipping gradient: 20.240058926320778 with coef 0.9881394156412955
+Epoch: [0][2260/2689], lr: 0.00100      Time 5.325 (4.703)      Data 4.575 (4.144)      Loss 4.1100 (4.6611)    Prec@1 15.625 (5.882)   Prec@5 28.125 (17.722)
+Epoch: [0][2280/2689], lr: 0.00100      Time 5.509 (4.705)      Data 4.912 (4.147)      Loss 4.6827 (4.6585)    Prec@1 6.250 (5.901)    Prec@5 18.750 (17.795)
+Epoch: [0][2300/2689], lr: 0.00100      Time 5.404 (4.709)      Data 4.772 (4.151)      Loss 4.2379 (4.6553)    Prec@1 6.250 (5.940)    Prec@5 28.125 (17.901)
+clipping gradient: 20.759685317578942 with coef 0.9634057402143926
+clipping gradient: 23.637673966185897 with coef 0.8461069404972057
+Epoch: [0][2320/2689], lr: 0.00100      Time 5.483 (4.713)      Data 4.885 (4.154)      Loss 5.0681 (4.6518)    Prec@1 0.000 (5.989)    Prec@5 18.750 (17.991)
+clipping gradient: 22.151702163665785 with coef 0.9028651546608863
+clipping gradient: 24.432526191715347 with coef 0.8185809294980582
+Epoch: [0][2340/2689], lr: 0.00100      Time 4.310 (4.714)      Data 3.826 (4.156)      Loss 4.1388 (4.6479)    Prec@1 12.500 (6.051)   Prec@5 40.625 (18.088)
+clipping gradient: 20.871461869028995 with coef 0.9582462467412429
+Epoch: [0][2360/2689], lr: 0.00100      Time 5.136 (4.718)      Data 4.590 (4.159)      Loss 4.3165 (4.6453)    Prec@1 12.500 (6.087)   Prec@5 28.125 (18.169)
+Epoch: [0][2380/2689], lr: 0.00100      Time 4.691 (4.720)      Data 4.255 (4.161)      Loss 4.1034 (4.6421)    Prec@1 15.625 (6.116)   Prec@5 25.000 (18.245)
+clipping gradient: 20.746429359437652 with coef 0.9640213095706468
+Epoch: [0][2400/2689], lr: 0.00100      Time 4.922 (4.723)      Data 4.379 (4.163)      Loss 4.4868 (4.6388)    Prec@1 3.125 (6.152)    Prec@5 18.750 (18.339)
+Epoch: [0][2420/2689], lr: 0.00100      Time 4.610 (4.727)      Data 4.076 (4.168)      Loss 3.8755 (4.6359)    Prec@1 12.500 (6.185)   Prec@5 28.125 (18.405)
+clipping gradient: 22.779066537017293 with coef 0.8779991035848133
+Epoch: [0][2440/2689], lr: 0.00100      Time 5.183 (4.731)      Data 4.545 (4.172)      Loss 4.1803 (4.6329)    Prec@1 3.125 (6.218)    Prec@5 31.250 (18.494)
+Epoch: [0][2460/2689], lr: 0.00100      Time 5.375 (4.735)      Data 4.780 (4.176)      Loss 4.0903 (4.6304)    Prec@1 9.375 (6.246)    Prec@5 34.375 (18.566)
+clipping gradient: 20.346359290415425 with coef 0.9829768419267724
+Epoch: [0][2480/2689], lr: 0.00100      Time 5.088 (4.738)      Data 4.577 (4.179)      Loss 4.3710 (4.6278)    Prec@1 0.000 (6.281)    Prec@5 21.875 (18.643)
+Epoch: [0][2500/2689], lr: 0.00100      Time 5.130 (4.741)      Data 4.519 (4.182)      Loss 4.1619 (4.6256)    Prec@1 18.750 (6.312)   Prec@5 43.750 (18.706)
+clipping gradient: 20.32607851792661 with coef 0.9839576277520021
+Epoch: [0][2520/2689], lr: 0.00100      Time 4.574 (4.744)      Data 4.087 (4.185)      Loss 4.0518 (4.6222)    Prec@1 15.625 (6.344)   Prec@5 37.500 (18.787)
+Epoch: [0][2540/2689], lr: 0.00100      Time 5.357 (4.747)      Data 4.845 (4.189)      Loss 4.5484 (4.6197)    Prec@1 9.375 (6.367)    Prec@5 34.375 (18.857)
+Epoch: [0][2560/2689], lr: 0.00100      Time 4.703 (4.750)      Data 4.111 (4.191)      Loss 3.8628 (4.6171)    Prec@1 12.500 (6.410)   Prec@5 40.625 (18.926)
+Epoch: [0][2580/2689], lr: 0.00100      Time 5.388 (4.752)      Data 4.923 (4.193)      Loss 4.3359 (4.6146)    Prec@1 12.500 (6.441)   Prec@5 34.375 (18.979)
+Epoch: [0][2600/2689], lr: 0.00100      Time 5.516 (4.753)      Data 4.932 (4.194)      Loss 4.5313 (4.6119)    Prec@1 12.500 (6.479)   Prec@5 15.625 (19.058)
+clipping gradient: 20.26029229859934 with coef 0.9871525891747706
+Epoch: [0][2620/2689], lr: 0.00100      Time 5.214 (4.755)      Data 4.647 (4.197)      Loss 3.4547 (4.6089)    Prec@1 34.375 (6.535)   Prec@5 56.250 (19.159)
+Epoch: [0][2640/2689], lr: 0.00100      Time 4.933 (4.759)      Data 4.067 (4.200)      Loss 4.2031 (4.6057)    Prec@1 3.125 (6.575)    Prec@5 31.250 (19.241)
+Epoch: [0][2660/2689], lr: 0.00100      Time 4.784 (4.760)      Data 4.280 (4.202)      Loss 4.4383 (4.6034)    Prec@1 9.375 (6.609)    Prec@5 21.875 (19.313)
+clipping gradient: 20.15807980268187 with coef 0.992157993011773
+Epoch: [0][2680/2689], lr: 0.00100      Time 5.690 (4.763)      Data 5.179 (4.204)      Loss 4.6137 (4.6005)    Prec@1 6.250 (6.637)    Prec@5 25.000 (19.399)
+clipping gradient: 64.27797434125772 with coef 0.3111485731304809
+
